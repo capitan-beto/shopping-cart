@@ -3,7 +3,7 @@ import Header from "./Header";
 const Items = () => {
     return (
         <>
-          <Header/>
+          <Header />
           <h1>Items</h1>
         </>
     )

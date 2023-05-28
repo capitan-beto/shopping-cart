@@ -1,13 +1,15 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Header from "../components/Header";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "../components/Home";
+import Items from "../components/Items";
+import Cart from "../components/Cart";
 
 const Routing = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={ <Header /> }>
-                </Route>
-                <Route path="/items" element={ <h1>Items</h1> } />
+                <Route path="/" element={<Home />} />
+                <Route path="/items" element={<Items />} />
+                <Route path="/cart" element={<Cart />} />
             </Routes>
         </BrowserRouter>
     )

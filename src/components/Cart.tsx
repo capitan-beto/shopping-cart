@@ -4,7 +4,7 @@ const Cart = () => {
     return (
         <>
           <Header />
-          <h1>Cart</h1>
+          <h1>Welcome to the Cart page</h1>
         </>
     )
 }

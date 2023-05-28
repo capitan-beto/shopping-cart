@@ -4,7 +4,7 @@ const Items = () => {
     return (
         <>
           <Header />
-          <h1>Items</h1>
+          <h1>This is the items page</h1>
         </>
     )
 }

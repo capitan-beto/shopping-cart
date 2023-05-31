@@ -10,19 +10,25 @@ type ProductType = {
   image: string;
 }
 
-const Home = () => {
-  const [data, setData] = useState<ProductType[]>([]);
+const useFetchItems = () => {
+  const [items, setItems] = useState<ProductType[]>([]);
   const [isFetching, setIsFetching] = useState(true);
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products?limit=5')
       .then(res => res.json())
-      .then(json => setData(json))
+      .then(json => setItems(json))
       .catch(e => console.log(e))
       .finally(() => {
         setIsFetching(false);
       })
   }, [])
+
+  return { items, isFetching };
+}
+
+const Home = () => {
+  const { items, isFetching} = useFetchItems();
 
   if (isFetching) {
     return <p>...loading</p>;
@@ -33,7 +39,7 @@ const Home = () => {
         <Header />
         <ul>
           {
-            data.map(product => {
+            items.map(product => {
               return (
                 <li key={product.id}>
                   <span>{product.id}</span>

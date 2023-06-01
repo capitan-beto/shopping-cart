@@ -1,6 +1,6 @@
 import Header from "./Header";
 
-const Items = () => {
+const Products = () => {
     return (
         <>
           <Header />
@@ -9,4 +9,4 @@ const Items = () => {
     )
 }
 
-export default Items;
+export default Products;

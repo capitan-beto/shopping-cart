@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../components/Home";
-import Items from "../components/Items";
+import Products from "../components/Products";
 import Cart from "../components/Cart";
 
 const Routing = () => {
@@ -8,7 +8,7 @@ const Routing = () => {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/Items" element={<Items />} />
+                <Route path="/Products" element={<Products />} />
                 <Route path="/Cart" element={<Cart />} />
             </Routes>
         </BrowserRouter>

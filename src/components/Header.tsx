@@ -12,7 +12,7 @@ const Header = () => {
                         <p>Home</p>
                     </li>
                     <li>
-                        <Link to="/Items">Items</Link>
+                        <Link to="/Products">Products</Link>
                     </li>
                     <li>
                         <Link to="/Cart">Cart</Link>
@@ -23,7 +23,7 @@ const Header = () => {
         </div>
     )
 
-    else if (location.pathname === "/Items") return (
+    else if (location.pathname === "/Products") return (
         <div>
             <h1>Welcome to White Lodge Store</h1>
             <nav>
@@ -32,7 +32,7 @@ const Header = () => {
                       <Link to="/" >Home</Link>
                     </li>
                     <li>
-                      <p>Items</p>
+                      <p>Products</p>
                     </li>
                     <li>
                         <Link to="/Cart" >Cart</Link>
@@ -51,7 +51,7 @@ const Header = () => {
                   <Link to="/" >Home</Link>
                 </li>
                 <li>
-                  <Link to="/Items" >Items</Link>
+                  <Link to="/Products" >Products</Link>
                 </li>
                 <li>
                     <p>Cart</p>

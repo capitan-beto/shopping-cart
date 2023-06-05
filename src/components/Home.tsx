@@ -5,12 +5,13 @@ const Home = () => {
   const { items, isFetching} = useFetchItems();
 
   if (isFetching) {
-    return <p>...loading</p>;
+    return <h1>...loading</h1>;
   }
 
   return (
       <>
         <Header />
+        <h1>Popular Products</h1>
         <ul>
           {
             items.map(product => {

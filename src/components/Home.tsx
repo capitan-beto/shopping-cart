@@ -2,10 +2,19 @@ import Header from "./Header"
 import { useFetchItems } from "../hooks/useFetchItems";
 
 const Home = () => {
-  const { items, isFetching} = useFetchItems();
+  const { items, isFetching, error} = useFetchItems();
 
   if (isFetching) {
     return <h1>...loading</h1>;
+  }
+
+  if (error) {
+    return (
+      <>
+        <Header />
+        <h1>Sorry, something went Wrong</h1>
+      </>
+    )
   }
 
   return (

@@ -7,30 +7,33 @@ global.fetch = jest.fn();
 
 const mockFetch = fetch as jest.MockedFunction<typeof fetch>;
 
+const products = [
+    { id: 1, title: "C3PO Golden Airpods" },
+    { id: 2, title: "Bender Bending Rodríguez Left Arm" }
+]
+
 
 describe('Home component', () => { 
-    it("should display loading page", async() => {
-        mockFetch.mockResolvedValue({
-            json: () => Promise.resolve([
-                { id: 1, title: "bebeto" },
-                { id: 2, title: "queonda" }
-            ])
-        } as any);
-        render(<Home />, { wrapper: BrowserRouter });
+    it("Should display loading page", async() => {
+        mockFetch.mockResolvedValue({ json: () => Promise.resolve(products)} as any);
+        act(() =>render(<Home />, { wrapper: BrowserRouter }));
     
         expect(screen.getByRole("heading").textContent).toMatch(/...loading/i);
     });
 
     it("Should display product name", async () => {
-        mockFetch.mockResolvedValue({
-            json: () => Promise.resolve([
-                { id: 1, title: "C3PO Golden Airpods" },
-                { id: 2, title: "Bender Bending Rodríguez Left Arm" }
-            ])
-        } as any);
-        await act(() => render(<Home />, { wrapper: BrowserRouter }));
+        mockFetch.mockResolvedValue({ json: () => Promise.resolve(products) } as any);
+        act(() => render(<Home />, { wrapper: BrowserRouter }));
 
-        expect(screen.getByText(/C3PO Golden Airpods/i)).toBeInTheDocument();
+        expect(await screen.findByText(/C3PO Golden Airpods/i)).toBeInTheDocument();
 
     });
+
+    it("Should display error message", async () => {
+        mockFetch.mockRejectedValueOnce(() => Promise.reject("API ERROR"));
+
+        act(() =>render(<Home />, { wrapper: BrowserRouter }))
+
+        expect(await screen.findByText(/sorry, something went wrong/i)).toBeInTheDocument();
+    })
 })

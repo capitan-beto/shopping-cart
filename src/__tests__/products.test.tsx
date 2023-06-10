@@ -13,11 +13,26 @@ const products = [
 ]
 
 describe("Products component", () => {
-    it("should display display loading page", async () => {
+    it ("should display loading page", async () => {
+        mockFetch.mockResolvedValue({ json: Promise.resolve(products) } as any);
+        act(() => render (<Products />, { wrapper: BrowserRouter }));
+
+        expect(await screen.findByText("...loading")).toBeInTheDocument();
+    })
+
+    it("should display display porduct name", async () => {
         mockFetch.mockResolvedValue({ json: () => Promise.resolve(products)} as any);
 
         act(() => render(<Products />, { wrapper: BrowserRouter }));
 
         expect(await screen.findByText(/c3po golden airpods/i)).toBeInTheDocument();
+    })
+
+    it("should display error message", async () => {
+        mockFetch.mockRejectedValueOnce(() =>  Promise.reject("API ERROR"));
+
+        act(() => render(<Products />, { wrapper: BrowserRouter })); 
+
+        expect(await screen.findByText(/sorry, something went wrong/i)).toBeInTheDocument();
     })
 })

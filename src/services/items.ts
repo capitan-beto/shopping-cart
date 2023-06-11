@@ -7,8 +7,8 @@ export type ProductType = {
     image: string;
 }
 
-export const fetchItems = () => {
-    return fetch('https://fakestoreapi.com/products?limit=5')
+export const fetchItems = (url: string) => {
+    return fetch(url)
     .then(res => res.json())
     .catch(err => {
         throw new Error(err)

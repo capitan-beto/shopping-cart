@@ -1,8 +1,8 @@
-import Header from "./Header"
+import Header from "./Header";
 import { useFetchItems } from "../hooks/useFetchItems";
 
 const Home = () => {
-  const { items, isFetching, error} = useFetchItems('https://fakestoreapi.com/products?limit=5');
+  const { items, isFetching, error } = useFetchItems('https://fakestoreapi.com/products?limit=5');
 
   if (isFetching) {
     return <h1>...loading</h1>;
@@ -39,3 +39,8 @@ const Home = () => {
 }
 
 export default Home;
+
+
+
+
+

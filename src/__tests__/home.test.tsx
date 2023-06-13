@@ -10,13 +10,12 @@ const mockFetch = fetch as jest.MockedFunction<typeof fetch>;
 const products = [
     { id: 1, title: "C3PO Golden Airpods" },
     { id: 2, title: "Bender Bending Rodríguez Left Arm" }
-]
-
+];
 
 describe('Home component', () => { 
-    it("Should display loading page", async() => {
+    it("Should display loading page", () => {
         mockFetch.mockResolvedValue({ json: () => Promise.resolve(products)} as any);
-        act(() =>render(<Home />, { wrapper: BrowserRouter }));
+        act(() => render(<Home />, { wrapper: BrowserRouter }));
     
         expect(screen.getByRole("heading").textContent).toMatch(/...loading/i);
     });
@@ -30,9 +29,9 @@ describe('Home component', () => {
     });
 
     it("Should display error message", async () => {
-        mockFetch.mockRejectedValueOnce(() => Promise.reject("API ERROR"));
+        mockFetch.mockRejectedValue(() => Promise.reject("API ERROR"));
 
-        act(() =>render(<Home />, { wrapper: BrowserRouter }))
+        act(() => render(<Home />, { wrapper: BrowserRouter }))
 
         expect(await screen.findByText(/sorry, something went wrong/i)).toBeInTheDocument();
     })

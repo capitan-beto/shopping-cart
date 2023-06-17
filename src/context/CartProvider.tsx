@@ -13,11 +13,11 @@ const INITIAL_STATE: CartState = {
   ]
 }
 
-type props = {
-    children: JSX.Element | JSX.Element[]
+export type propsType = {
+  children: JSX.Element | JSX.Element[]
 }
 
-const CartProvider = ({ children }: props) => {
+const CartProvider = ({ children }: propsType) => {
 
   const [cartState, dispatch] = useReducer( cartReducer, INITIAL_STATE );
 

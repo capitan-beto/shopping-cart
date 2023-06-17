@@ -1,5 +1,6 @@
 import Header from "./Header";
 import { useFetchItems } from "../hooks/useFetchItems";
+import AddCartBtn from "./AddCartBtn";
 
 const Products = () => {
   const { items, isFetching, error} = useFetchItems('https://fakestoreapi.com/products');
@@ -28,6 +29,7 @@ const Products = () => {
                 <li key={product.id}>
                   <span>{product.id}</span>
                   <span>{product.title}</span>
+                  <AddCartBtn id={product.id} title={product.title}/>
                 </li>
               )
             })

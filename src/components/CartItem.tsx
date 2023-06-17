@@ -1,9 +1,5 @@
-import { Item } from "../interfaces/interfaces"
 import useCart from "../hooks/useCart"
-
-interface props {
-    item: Item
-}
+import { props } from "../interfaces/interfaces";
 
 const CartItem = ({ item }: props) => {
   const { removeFromCart } = useCart();

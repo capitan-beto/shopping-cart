@@ -1,11 +1,10 @@
+import useCart from "../hooks/useCart"
 
 const AddCartBtn = ({ id, title }: {id: number, title: string}) => {
-  const handleClick = () => {
-    console.log(id, title)
-  }
+  const { addToCart } = useCart();
 
   return (
-    <button onClick={handleClick}>
+    <button onClick={() =>addToCart(id, title)}>
         Add to cart 🛒
     </button>
   )

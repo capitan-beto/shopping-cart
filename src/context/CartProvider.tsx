@@ -4,13 +4,8 @@ import { CartContext } from "./CartContext";
 import { cartReducer } from "./cartReducer";
 
 const INITIAL_STATE: CartState = {
-  cartCount: 1,
-  items: [
-    {
-      id: 1,
-      title: "test"
-    }
-  ]
+  cartCount: 0,
+  items: []
 }
 
 export type propsType = {
@@ -25,10 +20,15 @@ const CartProvider = ({ children }: propsType) => {
     dispatch({ type: "removeFromCart", payload: { id } })
   }
 
+  const addToCart = (id: number, title: string) => {
+    dispatch({ type: "addToCart", payload: { id, title} })
+  }
+
   return (
     <CartContext.Provider value={{
       cartState,
-      removeFromCart
+      removeFromCart,
+      addToCart
     }}>
         { children }
     </CartContext.Provider>

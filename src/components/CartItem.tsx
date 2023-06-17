@@ -3,14 +3,14 @@ import { props } from "../interfaces/interfaces";
 
 const CartItem = ({ item }: props) => {
   const { removeFromCart } = useCart();
+  const { id, title } = item
 
   return (
     <div style={{
       cursor: "pointer",
-      textDecoration: item.id !== 1 ? "line-through" : ""
     }}>
-        <li onDoubleClick={() => removeFromCart(item.id) }>
-            { item.title }
+        <li onDoubleClick={() => removeFromCart(id) }>
+            { title }
         </li>
     </div>
   )

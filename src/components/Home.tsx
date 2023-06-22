@@ -20,19 +20,23 @@ const Home = () => {
   return (
       <>
         <Header />
-        <h1>Popular Products</h1>
-        <ul>
-          {
-            items.map(product => {
-              return (
-                <li key={product.id}>
-                  <span>{product.id}</span>
-                  <span>{product.title}</span>
-                </li>
-              )
-            })
-          }
-        </ul>
+        <div className="container">
+          <h1>Popular Products</h1>
+          <ul>
+            {
+              items.map(product => {
+                return (
+                  <li key={product.id}>
+                    <img src={product.image} alt="" />
+                    <span>{product.price}</span>
+                    <span>{product.description}</span>
+                    <span>{product.title}</span>
+                  </li>
+                )
+              })
+            }
+          </ul>
+        </div>
       </>
   )
   

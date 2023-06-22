@@ -1,0 +1,9 @@
+body {
+  height: 100svh;
+  background: rgb(57,48,83);
+  background: linear-gradient(18deg, rgba(57,48,83,1) 46%, rgba(68,60,104,1) 100%);
+}
+
+ul {
+  list-style-type: none;
+}

@@ -1,5 +1,6 @@
 import Header from "./Header";
 import { useFetchItems } from "../hooks/useFetchItems";
+import styles from "../styles/home.module.css"
 
 const Home = () => {
   const { items, isFetching, error } = useFetchItems('https://fakestoreapi.com/products?limit=5');
@@ -26,11 +27,19 @@ const Home = () => {
             {
               items.map(product => {
                 return (
-                  <li key={product.id}>
-                    <img src={product.image} alt="" />
-                    <span>{product.price}</span>
-                    <span>{product.description}</span>
-                    <span>{product.title}</span>
+                  <li key={product.id} className={styles.productContainer}>
+                    <div className={styles.imageContainer}>
+                      <img src={product.image} alt={product.description} />
+                    </div>
+                    <div className={styles.titleContainer}> 
+                      <span>{product.title}</span>
+                      </div>
+                    <div className={styles.priceContainer}>
+                      <span>{product.price}</span>
+                    </div>
+                    <div className={styles.descContainer}>
+                      <span>{product.description}</span>
+                    </div>
                   </li>
                 )
               })

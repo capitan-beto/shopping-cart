@@ -1,32 +1,38 @@
+.homeBody {
+    display: grid;
+    padding: 0;
+    grid-template-columns: 1fr 1fr;
+}
+
 .productContainer {
     display: grid;
-    grid-template-rows:  1fr 1fr;
     grid-template-areas: 
-        "image title title"
-        "image price price"
         "image desc desc";
-    border: solid 1px blue;
+    justify-content: start;
+    cursor: pointer;
+    margin-bottom: 1%;
 }
 
 .imageContainer {
-    display: grid;
     grid-area: image;
+    width: min-content;
 }
 
 .imageContainer img {
-    /* aspect-ratio: 1 / 1; */
     height: 200px;
-    width: 170px;
+    width: 150px;
 }
 
-.titleContainer {
-    grid-area: title;
-}
-
-.priceContainer {
-    grid-area: price;
-}
-
-.descContainer {
+.contentContainer {
     grid-area: desc;
+    display: grid;
+    padding: 1rem;
+    width: 80ch;
+}
+
+.contentContainer > p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
 }

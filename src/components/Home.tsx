@@ -3,7 +3,7 @@ import { useFetchItems } from "../hooks/useFetchItems";
 import styles from "../styles/home.module.css"
 
 const Home = () => {
-  const { items, isFetching, error } = useFetchItems('https://fakestoreapi.com/products?limit=5');
+  const { items, isFetching, error } = useFetchItems('https://fakestoreapi.com/products?limit=6');
 
   if (isFetching) {
     return <h1>...loading</h1>;
@@ -23,7 +23,7 @@ const Home = () => {
         <Header />
         <div className="container">
           <h1>Popular Products</h1>
-          <ul>
+          <ul className={styles.homeBody}>
             {
               items.map(product => {
                 return (
@@ -31,14 +31,10 @@ const Home = () => {
                     <div className={styles.imageContainer}>
                       <img src={product.image} alt={product.description} />
                     </div>
-                    <div className={styles.titleContainer}> 
-                      <span>{product.title}</span>
-                      </div>
-                    <div className={styles.priceContainer}>
-                      <span>{product.price}</span>
-                    </div>
-                    <div className={styles.descContainer}>
-                      <span>{product.description}</span>
+                    <div className={styles.contentContainer}> 
+                      <h2>{product.title}</h2>
+                      <h3>Price: {product.price}</h3>
+                      <p>{product.description}</p>
                     </div>
                   </li>
                 )

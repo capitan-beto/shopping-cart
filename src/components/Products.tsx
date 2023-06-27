@@ -1,6 +1,6 @@
 import Header from "./Header";
 import { useFetchItems } from "../hooks/useFetchItems";
-import AddCartBtn from "./AddCartBtn";
+import ProductDisplay from "./ProductDisplay";
 
 const Products = () => {
   const { items, isFetching, error} = useFetchItems('https://fakestoreapi.com/products');
@@ -22,15 +22,11 @@ const Products = () => {
       <>
         <Header />
         <h1>Our catalog</h1>
-        <ul>
+        <ul className="grid gap-4 mt-8 sm:grid-cols-2 lg:grid-cols-4">
           {
             items.map(product => {
               return (
-                <li key={product.id}>
-                  <span>{product.id}</span>
-                  <span>{product.title}</span>
-                  <AddCartBtn id={product.id} title={product.title}/>
-                </li>
+                <ProductDisplay product={product} key={product.id}/>
               )
             })
           }

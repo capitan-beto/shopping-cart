@@ -1,3 +1,5 @@
+import AddCartBtn from "./AddCartBtn";
+
 
 type productType = {
   product: {
@@ -10,7 +12,7 @@ type productType = {
 }
 
 const ProductDisplay = ({ product }: productType) => {
-  const { image, description, title, price } = product;
+  const { id, image, description, title, price } = product;
 
   return (
       <li>
@@ -32,6 +34,7 @@ const ProductDisplay = ({ product }: productType) => {
               <span className="sr-only"> Regular Price </span>
               <span className="tracking-wider text-gray-900"> £{price} </span>
             </p>
+            <AddCartBtn  id={id} title={title}/>
           </div>
         </a>
       </li>

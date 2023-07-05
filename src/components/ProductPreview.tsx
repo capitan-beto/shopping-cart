@@ -9,11 +9,11 @@ type productType = {
 }
 
 const ProductDisplay = ({ product }: productType) => {
-  const { image, description, title, price } = product;
+  const { id, image, description, title, price } = product;
 
   return (
       <li>
-        <a href="#" className="block overflow-hidden group">
+        <a href={`products/${id}`} className="block overflow-hidden group">
           <div className="overflow-hidden">
             <img
               src={image}

@@ -1,6 +1,6 @@
 import Header from "./Header";
 import { useFetchItems } from "../hooks/useFetchItems";
-import ProductDisplay from "./ProductDisplay";
+import ProductDisplay from "./ProductPreview";
 
 const Home = () => {
   const { items, isFetching, error } = useFetchItems('https://fakestoreapi.com/products?limit=6');

@@ -1,6 +1,6 @@
 import Header from "./Header";
 import { useFetchItems } from "../hooks/useFetchItems";
-import ProductDisplay from "./ProductPreview";
+import ProductPreview from "./ProductPreview";
 
 const Products = () => {
   const { items, isFetching, error} = useFetchItems('https://fakestoreapi.com/products');
@@ -19,21 +19,21 @@ const Products = () => {
   }
 
   return (
-        <div>
-            <Header />
-            <h1>Our catalog</h1>
-          <div>
-            <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {
-                items.map(product => {
-                  return (
-                    <ProductDisplay product={product} key={product.id}/>
-                  )
-                })
-              }
-            </ul>
-          </div>
-        </div>
+    <>
+      <Header />
+      <h1>Our catalog</h1>
+      <div>
+        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {
+            items.map(product => {
+              return (
+                <ProductPreview product={product} key={product.id}/>
+              )
+            })
+          }
+        </ul>
+      </div>
+    </>
   )
 }
 

@@ -1,4 +1,4 @@
-type productType = {
+type singleProductType = {
   product: {
     id: number,
     image: string,
@@ -8,7 +8,7 @@ type productType = {
   }
 }
 
-const ProductDisplay = ({ product }: productType) => {
+const ProductPreview = ({ product }: singleProductType) => {
   const { id, image, description, title, price } = product;
 
   return (
@@ -37,4 +37,4 @@ const ProductDisplay = ({ product }: productType) => {
   )
 }
 
-export default ProductDisplay;
+export default ProductPreview;

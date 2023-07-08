@@ -10,22 +10,28 @@ const Header = () => {
           <h1>White Lodge Store</h1>
           <nav>
             <ul className="flex gap-3">
-                <li>
-                  <Link to="/" >Home</Link>
-                </li>
-                <li>
-                  <Link to="/Products" >Products</Link>
-                </li>   
-                <li>
-                    <Link to="/Cart" >
-                      <span className="material-symbols-outlined py-2 text-xl">
-                        shopping_cart
-                      </span>
-                      <span className={styles.lblCartCount} id='lblCartCount'>
-                        {cartCount}
-                      </span>
+                  <div className="flex gap-3">
+                    <Link to="/" >
+                      <li>
+                        Home
+                      </li>
                     </Link>
-                </li>
+                    <Link to="/Products" >
+                      <li>
+                        Products
+                      </li>
+                    </Link>
+                      <Link to="/Cart" >
+                        <li>
+                          <span className="material-symbols-outlined py-2 text-xl">
+                            shopping_cart
+                          </span>
+                          <span className={styles.lblCartCount} id='lblCartCount'>
+                            {cartCount}
+                          </span>
+                        </li>
+                      </Link>
+                  </div>
             </ul>
           </nav>
         </div>

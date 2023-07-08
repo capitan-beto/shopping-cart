@@ -13,22 +13,24 @@ const Header = () => {
                   <div className="flex gap-3">
                     <Link to="/" >
                       <li>
-                        Home
+                        <p>Home</p>
                       </li>
                     </Link>
                     <Link to="/Products" >
                       <li>
-                        Products
+                        <p>Products</p>
                       </li>
                     </Link>
                       <Link to="/Cart" >
-                        <li>
-                          <span className="material-symbols-outlined py-2 text-xl">
-                            shopping_cart
-                          </span>
-                          <span className={styles.lblCartCount} id='lblCartCount'>
-                            {cartCount}
-                          </span>
+                        <li className="w-20">
+                          <p className="flex justify-center ml-2">
+                            <span className="material-symbols-outlined py-2 text-xl">
+                              shopping_cart
+                            </span>
+                            <span className={styles.lblCartCount}>
+                              {cartCount}
+                            </span>
+                          </p>
                         </li>
                       </Link>
                   </div>

@@ -1,9 +1,15 @@
 import useCart from "../hooks/useCart"
-import { props } from "../interfaces/interfaces";
 
-const CartItem = ({ item }: props) => {
+type PropsType = {
+  item : {
+    id: number
+    title: string
+  }
+}
+
+const CartItem = ({ item }: PropsType) => {
   const { removeFromCart } = useCart();
-  const { id, title } = item
+  const { id, title } = item;
 
   return (
     <div style={{

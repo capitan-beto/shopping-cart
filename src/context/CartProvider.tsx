@@ -19,8 +19,8 @@ const CartProvider = ({ children }: propsType) => {
     dispatch({ type: "removeFromCart", payload: { id } })
   }
 
-  const addToCart = (id: number, title: string) => {
-    dispatch({ type: "addToCart", payload: { id, title} })
+  const addToCart = (transactionID: string, id: number, title: string) => {
+    dispatch({ type: "addToCart", payload: { transactionID, id, title} })
   }
 
   return (

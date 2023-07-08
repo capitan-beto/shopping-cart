@@ -15,8 +15,10 @@ const Header = () => {
                 </li>   
                 <li>
                     <Link to="/Cart" >
-                    <i className="fa">&#xf07a;</i>
-                    <span className={styles.lblCartCount} id='lblCartCount'>6</span>
+                      <span className="material-symbols-outlined py-2 text-xl">
+                        shopping_cart
+                      </span>
+                      <span className={styles.lblCartCount} id='lblCartCount'>6</span>
                     </Link>
                 </li>
             </ul>

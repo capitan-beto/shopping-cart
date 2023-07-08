@@ -4,6 +4,7 @@ import useCart from "../hooks/useCart";
 
 const Cart = () => {
     const { items, cartCount } = useCart();
+    console.log(items);
 
     return (
       <>

@@ -28,7 +28,7 @@ const Product = () => {
         <h2>{item?.description}</h2>
         <p>{item?.category}</p>
         <p>{item?.price}</p>
-        { item && <AddCartBtn id={item.id} title={item.title}/> }
+        { item && <AddCartBtn id={item.id} title={item.title} price={item.price}/> }
       </div>
     </>
   )

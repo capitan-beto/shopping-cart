@@ -2,6 +2,7 @@ export interface Item {
     transactionID: string,
     id: number,
     title: string,
+    price: number
 }
 
 export interface CartState {

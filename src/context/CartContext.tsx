@@ -4,7 +4,7 @@ import { CartState } from "../interfaces/interfaces";
 export type CartContextProps = {
     cartState: CartState;
     removeFromCart: ( transactionID: string ) => void;
-    addToCart: ( transactionID: string, id: number, title: string ) => void;
+    addToCart: ( transactionID: string, id: number, title: string, price: number ) => void;
 }
 
 export const CartContext = createContext<CartContextProps>({} as CartContextProps);

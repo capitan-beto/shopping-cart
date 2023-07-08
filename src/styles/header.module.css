@@ -1,0 +1,27 @@
+.container  > h1 {
+    font-size: 1.8rem;
+    padding-top: .3em 0;
+}
+
+.container li {
+    border-radius: 3px;
+    border: 1px solid #fff;
+    padding: .1em 1em;
+}
+
+.container li:hover {
+    border: 1px solid rgb(255, 255, 255, .3);
+    transition: all .1s ease-in;
+}
+
+.lblCartCount {
+    font-size: .6rem;
+    background: #ff0000;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: -9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+}

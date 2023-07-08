@@ -1,4 +1,5 @@
 export interface Item {
+    transactionID: string,
     id: number,
     title: string,
 }

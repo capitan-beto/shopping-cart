@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  font-size: calc(15px + 0.390625vw);
+  background: #000;
+  color: white;
+}
+
 body {
   height: 100svh;
   margin: 0;

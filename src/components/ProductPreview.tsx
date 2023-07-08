@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 type singleProductType = {
   product: {
     id: number,
@@ -13,7 +15,7 @@ const ProductPreview = ({ product }: singleProductType) => {
 
   return (
       <li>
-        <a href={`products/${id}`} className="block overflow-hidden group">
+        <Link to={`${id}`}>
           <div className="overflow-hidden">
             <img
               src={image}
@@ -32,7 +34,7 @@ const ProductPreview = ({ product }: singleProductType) => {
               <span className="tracking-wider text-gray-900"> £{price} </span>
             </p>
           </div>
-        </a>
+        </Link>
       </li>
   )
 }

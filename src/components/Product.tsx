@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import {useFetchSingleItem} from "../hooks/useFetchSingleElement";
 import Header from "./Header";
+import AddCartBtn from "./AddCartBtn";
 
 const Product = () => {
   const { productId } = useParams();
@@ -27,6 +28,7 @@ const Product = () => {
         <h2>{item?.description}</h2>
         <p>{item?.category}</p>
         <p>{item?.price}</p>
+        { item && <AddCartBtn id={item.id} title={item.title}/> }
       </div>
     </>
   )

@@ -4,7 +4,6 @@ import { CartContext } from "./CartContext";
 import { cartReducer } from "./cartReducer";
 
 const INITIAL_STATE: CartState = {
-  cartCount: 0,
   items: []
 }
 

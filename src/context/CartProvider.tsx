@@ -15,8 +15,8 @@ const CartProvider = ({ children }: propsType) => {
 
   const [cartState, dispatch] = useReducer( cartReducer, INITIAL_STATE );
 
-  const removeFromCart = (id: number) => {
-    dispatch({ type: "removeFromCart", payload: { id } })
+  const removeFromCart = (transactionID: string) => {
+    dispatch({ type: "removeFromCart", payload: { transactionID } })
   }
 
   const addToCart = (transactionID: string, id: number, title: string) => {

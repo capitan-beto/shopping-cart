@@ -1,10 +1,11 @@
+import { v4 as uuidv4 } from "uuid";
 import useCart from "../hooks/useCart";
 
-const AddCartBtn = ({ transactionID, id, title }: {transactionID: string, id: number, title: string}) => {
+const AddCartBtn = ({ id, title }: { id: number, title: string}) => {
   const { addToCart } = useCart();
 
   return (
-    <button onClick={() => addToCart( transactionID, id, title )}>
+    <button onClick={() => addToCart( uuidv4(), id, title )}>
         Add to cart 🛒
     </button>
   )

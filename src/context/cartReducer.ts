@@ -2,7 +2,7 @@ import { CartState, Item } from "../interfaces/interfaces";
 
 type CartAction = 
     | { type: "addToCart", payload: Item }
-    | { type: "removeFromCart", payload: { id: number} };
+    | { type: "removeFromCart", payload: { transactionID: string} };
 
 
 export const cartReducer = ( state: CartState, action: CartAction ): CartState => {
@@ -17,7 +17,7 @@ export const cartReducer = ( state: CartState, action: CartAction ): CartState =
         case "removeFromCart":
             return {
                 ...state,
-                items: state.items.filter(item => item.id !== action.payload.id)
+                items: state.items.filter(item => item.transactionID !== action.payload.transactionID)
             }
     
         default:

@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import {useFetchSingleItem} from "../hooks/useFetchSingleElement";
 import Header from "./Header";
 import AddCartBtn from "./AddCartBtn";
-import uniqid from "uniqid";
 
 const Product = () => {
   const { productId } = useParams();
@@ -29,7 +28,7 @@ const Product = () => {
         <h2>{item?.description}</h2>
         <p>{item?.category}</p>
         <p>{item?.price}</p>
-        { item && <AddCartBtn transactionID={ uniqid() } id={item.id} title={item.title}/> }
+        { item && <AddCartBtn id={item.id} title={item.title}/> }
       </div>
     </>
   )

@@ -4,7 +4,6 @@ export interface Item {
 }
 
 export interface CartState {
-    cartCount: number,
     items: Item[]
 }
 

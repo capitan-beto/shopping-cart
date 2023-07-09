@@ -53,7 +53,7 @@
 
 .title {
     color: transparent;
-    animation: 300ms ease-in title-ease;
+    animation: 200ms ease-in title-ease;
     background: #fff;
     background-clip: text;
     

@@ -10,11 +10,13 @@ const Header = () => {
     return (
         <div className={styles.container}>
           <div className={styles.brandContainer}>
-            <img src="/owl-white-lodge.jpg" alt="logo"
-              className={styles.image} 
-              onMouseEnter={() => setTitle(true)}
-              onMouseLeave={() => setTitle(false)}
-            />
+            <Link to="/">
+              <img src="/owl-white-lodge.jpg" alt="logo"
+                className={styles.image}
+                onMouseEnter={() => setTitle(true)}
+                onMouseLeave={() => setTitle(false)}
+              />
+            </Link>
             <h1 className={title ? styles.title : styles.titleOff}>White Lodge Store</h1>
           </div>
           <nav>

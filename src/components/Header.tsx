@@ -1,16 +1,25 @@
 import { Link } from "react-router-dom";
 import styles from "../styles/header.module.css";
 import useCart from "../hooks/useCart";
+import { useState } from "react";
 
 const Header = () => {
   const { cartCount } = useCart();
+  const [title, setTitle] = useState(false);
 
     return (
         <div className={styles.container}>
-          <h1>White Lodge Store</h1>
+          <div className={styles.brandContainer}>
+            <img src="/owl-white-lodge.jpg" alt="logo"
+              className={styles.image} 
+              onMouseEnter={() => setTitle(true)}
+              onMouseLeave={() => setTitle(false)}
+            />
+            <h1 className={title ? styles.title : styles.titleOff}>White Lodge Store</h1>
+          </div>
           <nav>
-            <ul className="flex gap-3">
-                  <div className="flex gap-3">
+            <ul className="flex">
+                  <div className="flex">
                     <Link to="/" >
                       <li>
                         <p>Home</p>

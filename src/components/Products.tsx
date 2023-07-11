@@ -1,12 +1,15 @@
 import Header from "./Header";
 import { useFetchItems } from "../hooks/useFetchItems";
 import ProductPreview from "./ProductPreview";
+import LoadingPage from "./LoadingPage";
 
 const Products = () => {
   const { items, isFetching, error} = useFetchItems('https://fakestoreapi.com/products');
 
   if (isFetching) {
-    return <h1>...loading</h1>;
+    return (
+      <LoadingPage/>
+    )
   }
 
   if (error) {

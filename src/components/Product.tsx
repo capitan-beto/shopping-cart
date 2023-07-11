@@ -2,13 +2,14 @@ import { useParams } from "react-router-dom";
 import {useFetchSingleItem} from "../hooks/useFetchSingleElement";
 import Header from "./Header";
 import AddCartBtn from "./AddCartBtn";
+import LoadingPage from "./LoadingPage";
 
 const Product = () => {
   const { productId } = useParams();
   const { item, isFetching, error} = useFetchSingleItem(`https://fakestoreapi.com/products/${productId}`);
 
   if (isFetching) {
-    return <h1>...loading</h1>;
+    return <LoadingPage />
   }
 
   if (error) {

@@ -1,0 +1,31 @@
+.table {
+    border-collapse: separate;
+    border-spacing: 0 1rem;
+    background: transparent;
+    min-width: 75%;
+    margin: auto;
+}
+
+th,
+td {
+    background: rgb(255, 255, 255, .1);
+    text-align: center;
+    padding: 5px 1rem;
+    border-bottom: 2px solid rgb(255, 255, 255, .3);
+}
+
+th:first-child, td:first-child {
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem;
+    border-right: solid 2px #000;
+}
+
+th:last-child, td:last-child {
+    border-bottom-right-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-left: solid 2px #000;
+}
+
+tbody tr:hover {
+    background: rgb(255, 255, 255, .4);
+}

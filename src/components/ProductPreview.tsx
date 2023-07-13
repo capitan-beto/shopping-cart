@@ -15,23 +15,23 @@ const ProductPreview = ({ product }: singleProductType) => {
 
   return (
       <li>
-        <Link to={`${id}`}>
-          <div className="overflow-hidden">
+        <Link to={`${id}`} className="block overflow-hidden group">
+          <div className="overflow-hidden w-full bg-white">
             <img
               src={image}
               alt={description}
-              className="h-[350px] w-full object-contain transition duration-500 group-hover:scale-105 sm:h-[450px]" 
+              className="m-auto h-[350px] w-3/5 object-scale-down transition duration-500 group-hover:scale-105 sm:h-[450px] bg-white" 
             />
           </div>
           <div className="relative pt-3">
             <h3
-              className="text-xs text-gray-700 truncate bg-white group-hover:underline"
+              className="text-xs py-1 text-white-700 truncate group-hover:underline underline-offset-[5px]"
             >
               {title}
             </h3>
             <p className="mt-2">
-              <span className="sr-only"> Regular Price </span>
-              <span className="tracking-wider text-gray-900"> £{price} </span>
+              <span className="sr-only text-white"> Regular Price </span>
+              <span className="tracking-wider text-white-900"> £{price} </span>
             </p>
           </div>
         </Link>

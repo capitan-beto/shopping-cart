@@ -18,11 +18,11 @@
 }
 
 .container li {
-    color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255, .7);
 }
 
 .container li:hover {
-    color: rgb(255, 255, 255, .3);
+    color: rgb(255, 255, 255, 1);
     transition: all .1s ease-in;
 }
 

@@ -1,17 +1,22 @@
 import styles from "../styles/homeBanner.module.css";
 import { useState } from "react";
+import { ProductType } from "../services/items";
 
-const HomeBanner = ({ items }: any) => {
-    let [count, setCount] = useState(3);
+type Props = {
+  items: ProductType[]
+}
 
-    const handleCount = () => {
-        if (count < 4) {
-            setCount(count + 1);
-        }
-        else if (count === 4) setCount(0);
-    }
+const HomeBanner = ({ items }: Props) => {
+  let [count, setCount] = useState(0);
 
-  return ( items &&
+  const handleCount = () => {
+      if (count < 4) {
+        setCount(count + 1);
+      }
+      else if (count === 4) setCount(0);
+  }
+
+  return (
     <div className={styles.container}>
         <img
           src={items[count].image}

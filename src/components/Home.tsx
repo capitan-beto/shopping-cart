@@ -1,7 +1,8 @@
 import Header from "./Header";
 import { useFetchItems } from "../hooks/useFetchItems";
-import ProductDisplay from "./ProductPreview";
+// import ProductDisplay from "./ProductPreview";
 import LoadingPage from "./LoadingPage";
+import HomeBanner from "./HomeBanner";
 
 const Home = () => {
   const { items, isFetching, error } = useFetchItems('https://fakestoreapi.com/products?limit=6');
@@ -23,8 +24,9 @@ const Home = () => {
       <>
         <Header />
         <div className="container">
-          <h1 className="text-3xl font-bold underline">Popular Products</h1>
-          <ul className="grid gap-4 mt-8 sm:grid-cols-2 lg:grid-cols-4">
+          <h1 className="text-2xl font-bold ">Welcome to the white lodge, leader in quality clothes</h1>
+          <h3>Checkout our popular items</h3>
+          {/* <ul className="grid gap-4 mt-8 sm:grid-cols-2 lg:grid-cols-4">
             {
               items.map(product => {
                 return (
@@ -32,7 +34,8 @@ const Home = () => {
                 )
               })
             }
-          </ul>
+          </ul> */}
+          <HomeBanner items={items}/>
         </div>
       </>
   )

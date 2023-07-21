@@ -1,0 +1,40 @@
+.container {
+    display: grid;
+    width: 500px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    background: #fff;
+    overflow: hidden;
+}
+
+.container > img {
+    grid-column: 1 / 6;
+    grid-row: 1 / 6;
+}
+
+.container > div {
+    grid-column: 5 / 6;
+    grid-row: 3 / 4;
+    justify-self: center;
+    align-self: center;
+}
+
+.container > div:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: all .2s ease;
+}
+
+.slide {
+    animation: slide .2s;
+}
+
+@keyframes slide {
+    from {
+        transform: translate(0%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}

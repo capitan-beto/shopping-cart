@@ -1,6 +1,7 @@
 import styles from "../styles/homeBanner.module.css";
 import { useState } from "react";
 import { ProductType } from "../services/items";
+import { Link } from "react-router-dom";
 
 type Props = {
   items: ProductType[]
@@ -22,17 +23,19 @@ const HomeBanner = ({ items }: Props) => {
 
   return (
     <div className={styles.container}>
-        <img
-          onLoad={() => setLoader(false)}
-          src={items[count].image}
-          alt={items[count].title}
-          className={"m-auto h-[350px] w-3/5 object-scale-down sm:h-[450px]"} 
-        />
+          <img
+            onLoad={() => setLoader(false)}
+            src={items[count].image}
+            alt={items[count].title}
+            className={"m-auto h-[350px] w-3/5 object-scale-down sm:h-[450px]"}
+          />
         <div
           onClick={() => handleCount()
         }
         > ➡️ </div>
-        <p className={loader ? styles.loading : styles.loaded}></p>
+        <Link to={`Products/${items[count].id}`} className={loader ? styles.loading : styles.loaded}>
+          <></>
+        </Link>
     </div>
   )
 }

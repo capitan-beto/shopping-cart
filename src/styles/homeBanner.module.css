@@ -18,12 +18,14 @@
     justify-self: center;
     align-self: center;
     backdrop-filter: blur(10px);
+    transition: all .3s;
+
 }
 
 .container > div:hover {
     cursor: pointer;
     transform: scale(1.2);
-    transition: all .2s ease;
+    transition: all .3s;
 }
 
 .slide {

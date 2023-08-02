@@ -23,16 +23,19 @@ const HomeBanner = ({ items }: Props) => {
 
   return (
     <div className={styles.container}>
-          <img
-            onLoad={() => setLoader(false)}
-            src={items[count].image}
-            alt={items[count].title}
-            className={"m-auto h-[350px] w-3/5 object-scale-down sm:h-[450px]"}
-          />
+        <img
+          onLoad={() => setLoader(false)}
+          src={items[count].image}
+          alt={items[count].title}
+          className={"m-auto h-[350px] w-3/5 object-scale-down sm:h-[450px]"}
+        />
         <div
-          onClick={() => handleCount()
-        }
-        > ➡️ </div>
+          onClick={() => handleCount()}
+        >
+          <span className="material-symbols-outlined text-black text-[2.5em]">
+          navigate_next
+          </span>
+        </div>
         <Link to={`Products/${items[count].id}`} className={loader ? styles.loading : styles.loaded}>
           <></>
         </Link>

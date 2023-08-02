@@ -29,6 +29,7 @@ const Product = () => {
         <h2>{item?.description}</h2>
         <p>{item?.category}</p>
         <p>{item?.price}</p>
+        <img src={item?.image} alt={item?.description} className="h-[30em]"/>
         { item && <AddCartBtn id={item.id} title={item.title} price={item.price}/> }
       </div>
     </>

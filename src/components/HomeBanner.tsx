@@ -32,7 +32,7 @@ const HomeBanner = ({ items }: Props) => {
         <div
           onClick={() => handleCount()}
         >
-          <span className="material-symbols-outlined text-black text-[2.5em]">
+          <span className="material-symbols-outlined text-black text-[3em]">
           navigate_next
           </span>
         </div>

@@ -7,25 +7,32 @@ type Props = {
 }
 
 const HomeBanner = ({ items }: Props) => {
-  let [count, setCount] = useState(0);
+  let [count, setCount] = useState<number>(0);
+  let [loader, setLoader] = useState<boolean>(true);
 
   const handleCount = () => {
-      if (count < 4) {
-        setCount(count + 1);
-      }
-      else if (count === 4) setCount(0);
+    setLoader(true);
+    if (count < 4) {
+      setCount(count + 1);
+    }
+    else if (count === 4) setCount(0);
+
   }
+
 
   return (
     <div className={styles.container}>
         <img
+          onLoad={() => setLoader(false)}
           src={items[count].image}
           alt={items[count].title}
-          className="m-auto h-[350px] w-3/5 object-scale-down sm:h-[450px]" 
+          className={"m-auto h-[350px] w-3/5 object-scale-down sm:h-[450px]"} 
         />
         <div
-          onClick={() => handleCount()}
+          onClick={() => handleCount()
+        }
         > ➡️ </div>
+        <p className={loader ? styles.loading : styles.loaded}></p>
     </div>
   )
 }

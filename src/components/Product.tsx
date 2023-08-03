@@ -24,13 +24,17 @@ const Product = () => {
   return (
     <>
       <Header />
-      <div>
-        <h1>{item?.title}</h1>
-        <h2>{item?.description}</h2>
-        <p>{item?.category}</p>
-        <p>{item?.price}</p>
-        <img src={item?.image} alt={item?.description} className="h-[30em]"/>
-        { item && <AddCartBtn id={item.id} title={item.title} price={item.price}/> }
+      <h1 className="mb-3 mx-3">{ item?.title }</h1>
+      <div className="grid mx-3 gap-[10%] md:flex justify-start">
+        <div className="grid content-start gap-3 max-w-[95%] md:max-w-[50%]">
+          <p className="text-justify first-letter:capitalize">{ item?.description }</p>
+          <h3 className="capitalize"> Category: { item?.category }</h3>
+          <p>${ item?.price }</p>
+          <div>
+            { item && <AddCartBtn id={ item.id } title={ item.title } price={ item.price } /> }
+          </div>
+        </div>
+        <img src={ item?.image } alt={ item?.description } className="h-[25em] m-auto md:m-0"/>
       </div>
     </>
   )

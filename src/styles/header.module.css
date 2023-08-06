@@ -2,12 +2,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 15svh;
+    height: 13svh;
+    width: 95%;
 }
 
 .container h1 {
     font-size: 1.8rem;
-    padding-top: .3em 0;
+    padding-top: .3em;
 }
 
 .container li {
@@ -76,5 +77,11 @@
         background: linear-gradient(45deg, #fff, rgb(0, 0, 0) 100%);
         background-clip: text;
     }
+}
+
+@media (max-width: 480px) {
+    .title, .titleOff {
+        display: none;
+    } 
 }
 

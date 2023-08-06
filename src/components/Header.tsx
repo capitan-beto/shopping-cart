@@ -32,8 +32,8 @@ const Header = () => {
               </li>
             </Link>
             <Link to="/Cart" >
-              <li className="w-20">
-                <p className="flex justify-center ml-2">
+              <li className="w-10">
+                <p className="flex justify-center ml-2 m-0">
                   <span className="material-symbols-outlined py-2 text-xl">
                     shopping_cart
                   </span>

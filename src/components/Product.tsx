@@ -24,9 +24,9 @@ const Product = () => {
   return (
     <>
       <Header />
-      <h1 className="mb-3 mx-3">{ item?.title }</h1>
-      <div className="grid mx-3 gap-[10%] md:flex justify-start">
+      <div className="grid mx-3 gap-[10%] md:flex justify-around">
         <div className="grid content-start gap-3 max-w-[95%] md:max-w-[50%]">
+          <h1 className="mb-3">{ item?.title }</h1>
           <p className="text-justify first-letter:capitalize">{ item?.description }</p>
           <h3 className="capitalize"> Category: { item?.category }</h3>
           <p>${ item?.price }</p>

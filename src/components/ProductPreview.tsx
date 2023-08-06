@@ -14,13 +14,13 @@ const ProductPreview = ({ product }: singleProductType) => {
   const { id, image, description, title, price } = product;
 
   return (
-      <li>
-        <Link to={`${id}`} className="block overflow-hidden group">
-          <div className="overflow-hidden w-full bg-white">
+      <li> 
+        <Link to={`${id}`} className="overflow-hidden group">
+          <div className="bg-white w-[100vw] overflow-hidden">
             <img
               src={image}
               alt={description}
-              className="m-auto h-[350px] w-3/5 object-scale-down transition duration-500 group-hover:scale-105 sm:h-[450px] bg-white" 
+              className="m-auto h-[20em] p-5 object-scale-down transition duration-500 group-hover:scale-105 bg-white" 
             />
           </div>
           <div className="relative pt-3">

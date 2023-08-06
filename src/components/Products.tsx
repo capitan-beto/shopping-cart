@@ -24,9 +24,9 @@ const Products = () => {
   return (
     <>
       <Header />
-      <h1>Our catalog</h1>
+      <h1 className="px-3">Our catalog</h1>
       <div>
-        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 overflow-hidden">
           {
             items.map(product => {
               return (

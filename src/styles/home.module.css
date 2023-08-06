@@ -36,3 +36,18 @@
     text-overflow: ellipsis;
 
 } */
+
+
+.container {
+    gap: 1em;
+    display: grid;
+    place-content: center;
+    background: url("https://residentsound.files.wordpress.com/2021/04/twin-peaks-flooring.jpeg?w=1024");
+}
+
+.container > h2 {
+    font-size: 3vh;
+    text-align: center;
+    padding: .5em;
+    background: black;
+}

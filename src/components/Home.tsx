@@ -2,6 +2,7 @@ import Header from "./Header";
 import { useFetchItems } from "../hooks/useFetchItems";
 import LoadingPage from "./LoadingPage";
 import HomeBanner from "./HomeBanner";
+import styles from "../styles/home.module.css";
 
 const Home = () => {
   const { items, isFetching, error } = useFetchItems('https://fakestoreapi.com/products?limit=6');
@@ -22,15 +23,12 @@ const Home = () => {
   return (
       <>
         <Header />
-        <div className="container">
-          <h1 className="text-2xl font-bold ">Welcome to the white lodge, leader in quality clothes</h1>
-          <div className="grid grid-cols-2 justify-items-start m-[5%]">
-            <div>
-              <h1>Check our most popular products and join to the white Lodge</h1>
-              <h2>Our style is what defines us</h2>
-            </div>
-            <HomeBanner items={items}/>
+        <div className="grid grid-rows-[35vh_auto] gap-3">
+          <div className={styles.container}>
+            <h2 className="uppercase">Welcome to white lodge <br></br> leader in quality clothes</h2>
+            <h2>Our style is what defines us</h2>
           </div>
+          <HomeBanner items={items}/>
         </div>
       </>
   )

@@ -5,7 +5,7 @@ import styles from "../styles/cart.module.css";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
-    const { items, cartCount } = useCart();
+    const { items, cartCount, cartTotal } = useCart();
 
     return (
       items.length > 0 ?
@@ -17,6 +17,7 @@ const Cart = () => {
           <h2 className="w-fit bg-black px-4 border-white border-4">Cart</h2>
         </div>
         <h3>Items on cart: {cartCount}</h3>
+        <h3>Cart total: ${cartTotal}</h3>
         <table className={styles.table}>
           <thead>
             <tr>

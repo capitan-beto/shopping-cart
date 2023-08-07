@@ -23,7 +23,11 @@ const CartItem = ({ item }: PropsType) => {
           </Link>
       </td>
       <td>${ price }</td>
-      <td onClick={ () => removeFromCart(transactionID) } style={{ cursor: "pointer"}}>❌</td>
+      <td onClick={ () => removeFromCart(transactionID) }>
+      <span className="material-symbols-outlined cursor-pointer">
+        remove_shopping_cart
+      </span>
+      </td>
     </tr>
   )
 }

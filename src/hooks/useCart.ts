@@ -7,7 +7,8 @@ const useCart = () => {
 
     return {
         items: items,
-        cartCount: items.length, 
+        cartCount: items.length,
+        cartTotal: items.map(x => x.price).reduce((a, b) => a + b, 0),
         removeFromCart, 
         addToCart
     }

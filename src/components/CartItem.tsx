@@ -1,4 +1,5 @@
 import useCart from "../hooks/useCart";
+import { Link } from "react-router-dom";
 
 type PropsType = {
   item : {
@@ -14,12 +15,15 @@ const CartItem = ({ item }: PropsType) => {
   const { transactionID, title, price, id } = item;
 
   return (
-    <tr style={{ cursor: "pointer"}}
-      onDoubleClick={ () => removeFromCart(transactionID) }
-    >
+    <tr>
       <td>{ id }</td>
-      <td>{ title }</td>
+      <td>
+          <Link to={`/Products/${id}`}>
+          { title } 
+          </Link>
+      </td>
       <td>${ price }</td>
+      <td onClick={ () => removeFromCart(transactionID) } style={{ cursor: "pointer"}}>❌</td>
     </tr>
   )
 }

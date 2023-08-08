@@ -17,7 +17,7 @@ const Cart = () => {
           <h2 className="w-fit bg-black px-4 border-white border-4">Cart</h2>
         </div>
         <h3>Items on cart: {cartCount}</h3>
-        <h3>Cart total: ${cartTotal}</h3>
+        <h3 className="mb-5">Cart total: ${cartTotal}</h3>
         <table className={styles.table}>
           <thead>
             <tr>
@@ -46,8 +46,8 @@ const Cart = () => {
         >
           <h2 className="w-fit bg-black px-4 border-white border-4">Cart</h2>
         </div>
-        <h2>Seems that you haven't add anything to the cart!</h2>
-        <h3>Check out our <Link to="/Products"
+        <h2 className="mx-3">Seems that you haven't add anything to the cart!</h2>
+        <h3 className="mx-3">Check out our <Link to="/Products"
          className="hover:underline text-slate-400"
         > Catalogue</Link> and join to the White Lodge
         </h3>

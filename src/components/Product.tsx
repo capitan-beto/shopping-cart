@@ -34,7 +34,7 @@ const Product = () => {
             { item && <AddCartBtn id={ item.id } title={ item.title } price={ item.price } /> }
           </div>
         </div>
-        <img src={ item?.image } alt={ item?.description } className="h-[25em] m-auto md:m-0"/>
+        <img src={ item?.image } alt={ item?.description } className="object-scale-down max-w-[50%] m-auto md:m-0 aspect-square"/>
       </div>
     </>
   )

@@ -31,7 +31,7 @@ const ProductPreview = ({ product }: singleProductType) => {
             </h3>
             <p className="mt-2 px-2">
               <span className="sr-only text-white"> Regular Price </span>
-              <span className="tracking-wider text-white-900"> £{price} </span>
+              <span className="tracking-wider text-white-900"> ${price} </span>
             </p>
           </div>
         </Link>

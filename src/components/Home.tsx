@@ -26,7 +26,7 @@ const Home = () => {
         <div className="grid grid-rows-[35vh_auto] gap-3">
           <div className={styles.container}>
             <h2 className="uppercase">Welcome to white lodge <br></br> leader in quality clothes</h2>
-            <h2>Our style is what defines us</h2>
+            <h2 className="italic">"Our style is what defines us"</h2>
           </div>
           <HomeBanner items={items}/>
         </div>

@@ -1,8 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,400;0,700;0,800;1,200&display=swap');
 
 html {
+  font-family: 'Nunito', sans-serif;
   font-size: calc(15px + 0.390625vw);
   background: #000;
   color: white;

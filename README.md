@@ -1,18 +1,42 @@
 # shopping-cart
-Classic shopping cart app made with TypeScript and React following the Odin Project Curriculum. The idea of this project is to integrate the Toolkit given by
-TOP to create apps using React Framework. 
+The product is a classic E-Commerce of various items with a cart, product list, product page and homepage.
 
-This project counts with the following tools and strategies (although most of them are provided by the TOP Curriculum some has been selected by me):
+___
 
-# Typescript as primary language: 
--The project uses TS in order to explore the features of it and achieve a cleaner, concise project using best practices that this language provide.
+The main goal is to achieve a good knowledge about how it works the React environment and how to solve real-life scenarios while developing apps
+and at the same time improve our code quality using a typed language, leaning on clear and concise typed components and SOLID principles like decoupling and separation of concerns. 
 
-# Vite as bundling tool: 
--TOP recommends using Create React App, but since the React removed it from the official docs, it seems to be a proper approach to use a better supported bundling tool for this project.
--Vite has proven to be lot faster at craeating and running projects in React.
+___
 
-# Jest/React testing library as unitary testing tool: 
--As TOP recommends, I use Jest and RTL as testing tool. It offers simple and concise testing case methods to test fetching and routing components (As primordial targets of testing of this app).
+# Technologies used:
+Typescript, Vite, Jest/React testing library, React-Router, Tailwind, React.
 
-# React-Router/React-RouterDOM: 
--The React Router Package is used as Router in order to provide a better UI/UX.
+___
+
+# Backend API:
+The API used to handle the backend is [Fake Store API](https://fakestoreapi.com/) (The plan is to migrate to [my own API](https://fakestoreapi.com/) when is ready for production)}
+
+___
+
+# Folder Structure:
+
+Shopping Cart
+|- tsconfig.json / _Typescript config_ 
+|- tailwind.config.json / _css framework config_
+|- package.json/ _npm dependencies and run scripts_
+|- jest.config.json / _testing config_
+|- index.html / _App Entry point_
+|- src / _app main directory_
+    |- __tests___ / _tests folder_
+    |- components / _main components_
+    |- context / _context components_ 
+    |- hooks / _custom hooks_
+    |- interfaces / _Typescript interfaces_
+    |- services / _service components_
+    |- styles / _css modules and files_
+    |- App.tsx / _App component (routing and context providing)_
+    |- main.tsx / _React entry point_
+    |- vite-env.d.ts / _vite type definitions file_
+    
+
+

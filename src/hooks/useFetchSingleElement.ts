@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { ProductType, fetchItems } from "../services/items";
+import { fetchItems } from "../services/items";
+import { ProductType } from "../interfaces/interfaces";
 
 export const useFetchSingleItem = (url: string) => {
     const [item, setItems] = useState<ProductType>();

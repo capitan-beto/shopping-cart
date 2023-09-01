@@ -1,6 +1,5 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import Home from "../components/Home";
-import { act } from "react-dom/test-utils";
 import { BrowserRouter } from "react-router-dom";
 import { ProductType } from "../interfaces/interfaces";
 import CartProvider from "../context/CartProvider";
@@ -41,10 +40,13 @@ describe('Home component', () => {
         })
     });
 
-    it.only("Should display error message", async () => {
+    it("Should display error message", async () => {
         mockFetch.mockRejectedValue(() => Promise.reject("API ERROR"));
-
-        act(() => render(<Home />, { wrapper: BrowserRouter }))
+        render(
+            <CartProvider>
+                <Home />
+            </CartProvider>
+        , { wrapper: BrowserRouter });
 
         expect(await screen.findByText(/sorry, something went wrong/i)).toBeInTheDocument();
     })

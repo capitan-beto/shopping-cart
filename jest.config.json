@@ -1,7 +1,9 @@
 {
     "testEnvironment": "jsdom",
     "transform": {
-        "^.+\\.tsx?$": "ts-jest"
+        "^.+\\.tsx?$": "ts-jest",
+        ".+\\.(css|styl|less|sass|scss)$": "jest-css-modules-transform"
+
     },
     "setupFilesAfterEnv": [
         "@testing-library/jest-dom/extend-expect"

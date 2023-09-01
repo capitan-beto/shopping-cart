@@ -1,23 +1,31 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import Products from "../components/Products";
 import { act } from "react-dom/test-utils";
 import { BrowserRouter } from "react-router-dom";
+import { ProductType } from "../interfaces/interfaces";
+import CartProvider from "../context/CartProvider";
 
 global.fetch = jest.fn();
 
 const mockFetch = fetch as jest.MockedFunction<typeof fetch>;
 
-const products = [
-    { id: 1, title: "C3PO Golden Airpods" },
-    { id: 2, title: "Bender Bending Rodríguez Left Arm" }
-]
+const products: ProductType[] = [
+    { id: 1, title: "C3PO Golden Airpods", price: 1234, category: "Robot stuff", description: "Shiny robot stuff", image: "image.com/c3po"},
+    { id: 2, title: "Bender Bending Rodríguez Left Arm" , price: 4321, category: "Robot stuff", description: "Shiny robot stuff",  image: "image.com/bender"}
+];
 
 describe("Products component", () => {
-    it ("should display loading page", async () => {
+    it("should display loading page", async () => {
         mockFetch.mockResolvedValue({ json: Promise.resolve(products) } as any);
-        act(() => render (<Products />, { wrapper: BrowserRouter }));
+        render(
+            <CartProvider>
+                <Products />
+            </CartProvider>
+        , { wrapper: BrowserRouter });
 
-        expect(await screen.findByText("...loading")).toBeInTheDocument();
+        await waitFor(() => {
+            expect(screen.getByRole("img").textContent).toMatchSnapshot;
+        })
     })
 
     it("should display display porduct name", async () => {

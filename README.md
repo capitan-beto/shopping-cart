@@ -18,6 +18,11 @@ The API used to handle the backend is [Fake Store API](https://fakestoreapi.com/
 
 ___
 
+#To-Do:
+Finish Folder Structure in docs
+Decompose Header component
+___
+
 # Folder Structure:
 ```
 Shopping Cart

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { ProductType, fetchItems } from "../services/items";
+import { fetchItems } from "../services/items";
+import { ProductType } from "../interfaces/interfaces";
 
 export const useFetchItems = (url: string) => {
     const [items, setItems] = useState<ProductType[]>([]);

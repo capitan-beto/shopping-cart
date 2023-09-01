@@ -12,3 +12,12 @@ export interface CartState {
 export interface props {
     item: Item
 }
+
+export interface ProductType {
+    id: number,
+    title: string,
+    price: number, 
+    category: string,
+    description: string,
+    image: string;
+}

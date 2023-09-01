@@ -1,7 +1,7 @@
 import styles from "../styles/homeBanner.module.css";
 import { useState } from "react";
-import { ProductType } from "../services/items";
 import { Link } from "react-router-dom";
+import { ProductType } from "../interfaces/interfaces";
 
 type Props = {
   items: ProductType[]

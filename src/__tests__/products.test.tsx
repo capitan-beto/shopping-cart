@@ -1,6 +1,5 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import Products from "../components/Products";
-import { act } from "react-dom/test-utils";
 import { BrowserRouter } from "react-router-dom";
 import { ProductType } from "../interfaces/interfaces";
 import CartProvider from "../context/CartProvider";
@@ -28,10 +27,14 @@ describe("Products component", () => {
         })
     })
 
-    it("should display display porduct name", async () => {
+    it("should display display product name", async () => {
         mockFetch.mockResolvedValue({ json: () => Promise.resolve(products)} as any);
 
-        act(() => render(<Products />, { wrapper: BrowserRouter }));
+        render(
+            <CartProvider>
+                <Products />
+            </CartProvider>
+        , { wrapper: BrowserRouter });
 
         expect(await screen.findByText(/c3po golden airpods/i)).toBeInTheDocument();
     })
@@ -39,7 +42,11 @@ describe("Products component", () => {
     it("should display error message", async () => {
         mockFetch.mockRejectedValueOnce(() =>  Promise.reject("API ERROR"));
 
-        act(() => render(<Products />, { wrapper: BrowserRouter })); 
+        render(
+            <CartProvider>
+                <Products />
+            </CartProvider>
+        , { wrapper: BrowserRouter });
 
         expect(await screen.findByText(/sorry, something went wrong/i)).toBeInTheDocument();
     })

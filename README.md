@@ -14,7 +14,7 @@ Typescript, Vite, Jest/React testing library, React-Router, Tailwind, React.
 ___
 
 # Backend API:
-The API used to handle the backend is [Fake Store API](https://fakestoreapi.com/) (The plan is to migrate to [my own API](https://github.com/capitan-beto/shushi-api) when is ready for production)}
+The API used to handle the backend is [Fake Store API](https://fakestoreapi.com/) (The plan is to migrate to [my own API](https://github.com/capitan-beto/shushi-api) when is ready for production)
 
 ___
 

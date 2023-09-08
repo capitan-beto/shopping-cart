@@ -20,11 +20,12 @@ describe("Products component", () => {
             <CartProvider>
                 <Products />
             </CartProvider>
-        , { wrapper: BrowserRouter });
+            , { wrapper: BrowserRouter }
+        );
 
         await waitFor(() => {
             expect(screen.getByRole("img").textContent).toMatchSnapshot;
-        })
+        });
     })
 
     it("should display display product name", async () => {
@@ -34,7 +35,8 @@ describe("Products component", () => {
             <CartProvider>
                 <Products />
             </CartProvider>
-        , { wrapper: BrowserRouter });
+            , { wrapper: BrowserRouter }
+        );
 
         expect(await screen.findByText(/c3po golden airpods/i)).toBeInTheDocument();
     })
@@ -46,7 +48,8 @@ describe("Products component", () => {
             <CartProvider>
                 <Products />
             </CartProvider>
-        , { wrapper: BrowserRouter });
+            , { wrapper: BrowserRouter }
+        );
 
         expect(await screen.findByText(/sorry, something went wrong/i)).toBeInTheDocument();
     })

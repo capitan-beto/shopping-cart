@@ -20,7 +20,8 @@ describe('Home component', () => {
             <CartProvider>
                 <Home />
             </CartProvider>
-        , { wrapper: BrowserRouter });
+            , { wrapper: BrowserRouter }
+        );
 
         await waitFor(() => {
             expect(screen.getByRole("img").textContent).toMatchSnapshot;
@@ -33,7 +34,8 @@ describe('Home component', () => {
             <CartProvider>
                 <Home />
             </CartProvider>
-        , { wrapper: BrowserRouter });
+            , { wrapper: BrowserRouter }
+        );
 
         await waitFor(() => {
             expect(screen.getByRole("img")).toMatchSnapshot;
@@ -46,7 +48,8 @@ describe('Home component', () => {
             <CartProvider>
                 <Home />
             </CartProvider>
-        , { wrapper: BrowserRouter });
+            , { wrapper: BrowserRouter }
+        );
 
         expect(await screen.findByText(/sorry, something went wrong/i)).toBeInTheDocument();
     })

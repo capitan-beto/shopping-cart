@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import Header from "../components/Header";
 import CartProvider from "../context/CartProvider";
 
-test("Full app rendering/navigating", async () => {
+test("Full app rendering/navigating", () => {
     render(
         <CartProvider>
             <Header />

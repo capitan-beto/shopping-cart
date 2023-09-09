@@ -19,13 +19,13 @@ describe('Home component', () => {
         render(
             <CartProvider>
                 <Home />
-            </CartProvider>
-            , { wrapper: BrowserRouter }
+            </CartProvider>,
+            { wrapper: BrowserRouter }
         );
 
         await waitFor(() => {
             expect(screen.getByRole("img").textContent).toMatchSnapshot;
-        })
+        });
     });
 
     it("Should display product", async () => {
@@ -33,13 +33,13 @@ describe('Home component', () => {
         render(
             <CartProvider>
                 <Home />
-            </CartProvider>
-            , { wrapper: BrowserRouter }
+            </CartProvider>,
+            { wrapper: BrowserRouter }
         );
 
         await waitFor(() => {
             expect(screen.getByRole("img")).toMatchSnapshot;
-        })
+        });
     });
 
     it("Should display error message", async () => {
@@ -47,10 +47,11 @@ describe('Home component', () => {
         render(
             <CartProvider>
                 <Home />
-            </CartProvider>
-            , { wrapper: BrowserRouter }
+            </CartProvider>,
+            { wrapper: BrowserRouter }
         );
 
-        expect(await screen.findByText(/sorry, something went wrong/i)).toBeInTheDocument();
-    })
+        expect(await screen.findByText(/sorry, something went wrong/i))
+            .toBeInTheDocument();
+    });
 })

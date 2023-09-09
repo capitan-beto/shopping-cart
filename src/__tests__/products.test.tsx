@@ -19,8 +19,8 @@ describe("Products component", () => {
         render(
             <CartProvider>
                 <Products />
-            </CartProvider>
-            , { wrapper: BrowserRouter }
+            </CartProvider>,
+            { wrapper: BrowserRouter }
         );
 
         await waitFor(() => {
@@ -30,27 +30,27 @@ describe("Products component", () => {
 
     it("should display display product name", async () => {
         mockFetch.mockResolvedValue({ json: () => Promise.resolve(products)} as any);
-
         render(
             <CartProvider>
                 <Products />
-            </CartProvider>
-            , { wrapper: BrowserRouter }
+            </CartProvider>,
+            { wrapper: BrowserRouter }
         );
 
-        expect(await screen.findByText(/c3po golden airpods/i)).toBeInTheDocument();
+        expect(await screen.findByText(/c3po golden airpods/i))
+            .toBeInTheDocument();
     })
 
     it("should display error message", async () => {
         mockFetch.mockRejectedValueOnce(() =>  Promise.reject("API ERROR"));
-
         render(
             <CartProvider>
                 <Products />
-            </CartProvider>
-            , { wrapper: BrowserRouter }
+            </CartProvider>,
+            { wrapper: BrowserRouter }
         );
 
-        expect(await screen.findByText(/sorry, something went wrong/i)).toBeInTheDocument();
+        expect(await screen.findByText(/sorry, something went wrong/i))
+            .toBeInTheDocument();
     })
 })

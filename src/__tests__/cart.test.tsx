@@ -33,7 +33,8 @@ describe("Cart component test", () => {
             { wrapper: BrowserRouter}
         );
 
-        expect(screen.getByText(/seems that you haven't add anything to the cart!/i)).toBeInTheDocument();
+        expect(screen.getByText(/seems that you haven't add anything to the cart!/i))
+            .toBeInTheDocument();
     });
 
     it("should display single item", () => {

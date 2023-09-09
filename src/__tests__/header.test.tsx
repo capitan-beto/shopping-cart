@@ -4,12 +4,13 @@ import { BrowserRouter } from "react-router-dom";
 import Header from "../components/Header";
 import CartProvider from "../context/CartProvider";
 
-test("Full app rendering/navigating", () => {
+test("full app rendering/navigating", () => {
     render(
         <CartProvider>
             <Header />
-        </CartProvider>
-    , {wrapper: BrowserRouter});
+        </CartProvider>,
+        {wrapper: BrowserRouter}
+    );
 
     expect(screen.getByText(/white lodge store/i)).toBeInTheDocument();
 })

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar tests cart icon should display correct number of items 1`] = `
+<span
+  class="lblCartCount"
+  data-testid="cart-icon"
+>
+  2
+</span>
+`;
+
+exports[`Navbar tests cart icon should display initial cart items count 1`] = `
+<span
+  class="lblCartCount"
+  data-testid="cart-icon"
+>
+  0
+</span>
+`;

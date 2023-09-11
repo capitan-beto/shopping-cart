@@ -4,6 +4,7 @@ import useCart from "../hooks/useCart";
 
 const NavBar = () => {
   const { cartCount } = useCart();
+  console.log(typeof cartCount);
 
   return (
     <div>
@@ -25,7 +26,7 @@ const NavBar = () => {
                   <span className="material-symbols-outlined py-2 text-xl">
                     shopping_cart
                   </span>
-                  <span className={styles.lblCartCount}>
+                  <span className={styles.lblCartCount} data-testid={"cart-icon"}>
                     {cartCount}
                   </span>
                 </p>
